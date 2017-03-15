@@ -9,6 +9,7 @@ namespace Consul.Test
     public class SelectiveParallel
     {
         static readonly AsyncReaderWriterLock m_Lock = new AsyncReaderWriterLock();
+
         static internal Task<AsyncReaderWriterLock.Releaser> Parallel()
         {
             return m_Lock.ReaderLockAsync();
